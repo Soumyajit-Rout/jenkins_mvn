@@ -6,7 +6,11 @@ pipeline {
     agent any
 
     stages {
-        
+        stage('checkout') {
+            steps {
+                git 'https://github.com/Soumyajit-Rout/jenkins_mvn.git'
+            }
+        }
         stage('compile') {
             steps {
                 sh 'mvn compile'
